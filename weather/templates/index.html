@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Rain Prediction</title>
+</head>
+<style>
+    body {
+        background-color: #0fd3dd;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .form {
+        background-color: white;
+        width: 70vw;
+        margin: 50px auto;
+        padding: 20px 50px;
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+    }
+    
+    .form h1 {
+        color: #0fd3dd;
+    }
+    
+    .button {
+        padding: 5px 30px;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <section id="prediction-form">
+
+        <h1 class="my-3 text-center">Predictor</h1>
+        <div class="row form">
+            <div class="col-md-6 my-2">
+                <label for="mintemp" class="mintemp"> Minimum temprature</label>
+                <select id='min_temp'>
+                        </select>
+            </div>
+
+            <div class="col-md-6 my-2">
+                <label for="maxtemp" class="maxtemp">Maximum Temperature</label>
+                <select id='max_temp'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="rainfall" class="rainfall">Rainfall</label>
+                <select id='rainfall'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="evaporation" class="evaporation">Evaporation</label>
+                <select id='Evaporation'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="sunshine" class="sunshine">Sunshine</label>
+                <select id='Sunshine'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="windgustspeed" class="windgustspeed">Wind Gust Speed</label>
+                <select id='WindGustSpeed'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="windspeed9am" class="windspeed9am">Wind Speed 9am</label>
+                <select id=wind_speed_9a></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="windspeed3pm" class="windspeed3pm">Wind Speed 3pm</label>
+                <select id=wind_speed_3></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="humidity9am" class="humidity9am">Humidity 9am</label>
+                <select id='Hummidity_9'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="humidity3pm" class="humidity3pm">Humidity 3pm</label>
+                <select id='Hummidity_3'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="pressure9am" class="pressure9am">Pressure 9am</label>
+                <select id='pressure_9'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="pressure3pm" class="pressure3pm">Pressure 3pm</label>
+                <select id='pressure_3'></select>
+            </div>
+
+            <div class="col-md-6 my-2">
+                <label for="temp9am" class="temp9am">Temperature 9am</label>
+                <select id='temp_9'></select>
+            </div>
+            <div class="col-md-6 my-2">
+                <label for="temp3pm" class=temp3pm ">Temperature 3pm</label>
+                        <select id='temp_3'></select>
+                </div>
+                <div class="col-md-6 my-2 ">
+                        <label for="cloud9am " class="cloud9am ">Cloud 9am</label>
+                        <select id='cloud_9'></select>
+                </div>
+                <div class="col-md-6 my-2 ">
+                        <label for="cloud3pm " class="cloud3pm ">Cloud 3pm</label>
+                        <select id='cloud_3'></select>
+                </div>
+                
+                <div class="col-md-6 my-2 ">
+                        <label for="winddir9am " class="winddir9am " name = "winddir9am ">Wind Direction at 9am</label>
+                        <select id='wind_direction_9'></select>
+                </div>
+                <div class="col-md-6 my-2 ">
+                        <label for="winddir3pm " class="winddir3pm " name = "winddir3pm ">Wind Direction at 3pm</label>
+                        <select id='wind_direction_3'></select>
+                </div>
+                <div class="col-md-6 my-2 ">
+                        <label for="windgustdir " class="windgustdir " name = "windgustdir ">Wind Gust Direction</label>
+                        <select id='wind_gust_dir'></select>
+                </div>
+                <div class="col-md-12 my-2 ">
+                    <button type="submit " id="submitButton " class="btn btn-info button ">Predict</button>
+                </div>
+                <div>
+                    <div>
+                        <p id='sum'></p>
+                    </div>
+                    <div>
+                        <p id='overall'></p>
+                    </div>
+                    <div>
+                        <p id='mvlr'></p>
+                    </div>
+                    <div>
+                        <p id='knn'></p>
+                    </div>
+                    <div>
+                        <p id='rf'></p>
+                    </div>
+                    <div>
+                        <p id='svm'></p>
+                    </div>
+                    </div>
+                
+                
+            </div>
+        
+    </section>
+        <script src="https://d3js.org/d3.v5.min.js "></script>
+        <script src="./app.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
+</body>
+
+</html>
