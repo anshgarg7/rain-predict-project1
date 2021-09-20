@@ -23,7 +23,7 @@ The purpose of this project was to use various machine learning models and histo
 
 ## Screenshots
 
-![screenshot1](weather/ansh1.jpg)
+![screenshot1](../weather/ansh1.jpg)
 
 ## Results
 
