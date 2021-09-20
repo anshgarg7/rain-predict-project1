@@ -23,7 +23,7 @@ The purpose of this project was to use various machine learning models and histo
 
 ## Screenshots
 
-![screenshot1](https://github.com/anshgarg7/rain-predict-project1/blob/master/weather/ansh1.JPG)
+![ansh2](https://user-images.githubusercontent.com/42098930/134027247-52f86fc3-3422-4c28-ac37-b63bf09d763c.PNG)
 
 ## Results
 
